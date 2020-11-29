@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Sightings</title>
+
+    <!-- Bootstrap 4 -->
+    <link 
+        rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <h2>
+            <a class="navbar-brand ml-4" href="index.html">UFO Sightings</a>
+        </h2>
+
+        <!-- Collapsed menu -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#menu" aria-controls="menu" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Expanded menu -->
+        <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active ml-4" href="index.html">
+                    Home <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-link ml-4" href="#">Data</a>
+                <a class="nav-link ml-4" href="#">News</a>
+                <a class="nav-link ml-4" href="#">UFOs</a>
+                <a class="nav-link mx-4" href="#">Sightings</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center rounded-0">
+        <h1 class="display-3">The Truth is Out There</h1>
+    </div>
+
+
+    <!-- Article -->
+    <div class="container-fluid border-bottom pb-2 mb-5">
+        <div class="row">
+
+            <!-- Article title -->
+            <div class="col-md-4">
+                <hr class="bg-light" />
+                <h3 class="my-4">
+                    UFO Sightings: Fact or Fancy?<br/>
+                    <small>Ufologists Weigh In</small>
+                </h3>
+                <hr class="bg-light" />
+            </div>
+
+            <!-- Article body -->
+            <div class="col-md-8">
+                <p>
+                    Are we alone in the universe? For millennia, humans have turned to the sky 
+                    to answer this question. Now, thanks to research generously funded by 
+                    W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our 
+                    sky-searching with data analysis.
+                </p>
+                <p>
+                    “The release of this analysis is well-timed: It coincides with the 
+                    celebration of World UFO Day, which is a moment for ufologists around the 
+                    world to connect, relax, and sample a range of UFO-themed snacks,” said 
+                    Dr. Ursula F. Olivier, the world’s preeminent expert on circular sightings. 
+                    “Citizen-scientists can be especially helpful in both cataloguing 
+                    sightings—which is hugely helpful for us in our search for aliens—and in 
+                    helping us celebrate the work that has already been done, such as this data 
+                    visualization project, which will help us raise awareness of the ubiquity 
+                    of sightings!”
+                </p>
+                <p>
+                    Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien 
+                    activist V. Isualize reached out to our reporters to go on record as firmly 
+                    opposed to any attempts to provide access to this data. “If there are 
+                    aliens, they certainly would like to be left alone,” she stated, before 
+                    directing us to the Leave Aliens Alone (LAA) community engagement 
+                    initiative she founded and funds.
+                </p>
+                <p>
+                    So what do YOU think? Are we alone in the universe? Are aliens trying to 
+                    contact us, or do they want to be left alone? Dig through the data 
+                    yourself, and let us know what you see.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Data -->
+    <div class="container-fluid">
+        <div class="row">
+            
+            <!-- Filter form -->
+            <div class="col-lg-3 mb-5">
+                <h5>Filter Search</h5>
+                <form class="container-fluid border rounded p-3">
+
+                    <!-- Date input -->
+                    <div class="form-group">
+                        <label for="datetime">Date</label>
+                        <input
+                            class="form-control" id="datetime" 
+                            type="text" placeholder="1/10/2010" 
+                            maxlength="10"
+                        />
+                    </div>
+
+                    <!-- City input -->
+                    
+
+                    <!-- Location input -->
+                    <div class="row">
+                        <div class="form-group col-6 col-lg-12">
+                            <label for="city">City</label>
+                            <input
+                                class="form-control" id="city" type="text"
+                            />
+                        </div>
+                        <div class="form-group col-3 col-lg-6">
+                            <label for="state">State</label>
+                            <input
+                                class="form-control" id="state" 
+                                type="text"
+                            />
+                        </div>
+                        <div class="form-group col-3 col-lg-6">
+                            <label for="country">Country</label>
+                            <input
+                                class="form-control" id="country" 
+                                type="text"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Shape input -->
+                    <div class="form-group">
+                        <label for="shape">Shape</label>
+                        <input
+                            class="form-control" id="shape" type="text"
+                        />
+                    </div>
+
+                    <!-- Filter button -->
+                    <button class="btn btn-dark btn-block border" 
+                            id="filter-btn" type="button">
+                        Filter
+                    </button>
+                </form>
+                
+            </div>
+
+            <!-- Data table -->
+            <div class="col-lg-9">
+                <table class="table table-responsive table-bordered 
+                              table-dark table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Shape</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS and JQuery -->
+    <script 
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"
+    ></script>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" 
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- D3 -->
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" 
+        integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw=="
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Javacsript -->
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>
