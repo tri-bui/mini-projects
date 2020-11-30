@@ -15,8 +15,28 @@ function displayTable(data) {
     // Clear the table currently being displayed
     tbody.html("");
 
+    // Unique values for each feature
+    let cities = [];
+    let states = [];
+    let countries = [];
+    let shapes = [];
+
     // Iterate through every object in the data
     data.forEach(dataObj => {
+
+        // Unique values for each feature
+        if (!cities.includes(dataObj['city'])) {
+            cities.push(dataObj['city']);
+        }
+        if (!states.includes(dataObj['state'])) {
+            states.push(dataObj['state']);
+        }
+        if (!countries.includes(dataObj['country'])) {
+            countries.push(dataObj['country']);
+        }
+        if (!shapes.includes(dataObj['shape'])) {
+            shapes.push(dataObj['shape']);
+        }
 
         // Add a row to the HTML table
         let row = tbody.append("tr");
@@ -41,7 +61,13 @@ function displayTable(data) {
             let cell = row.append("td");
             cell.text(val);
         }
-    })  
+    });
+    
+    // Unique values for each feature
+    console.log(cities);
+    console.log(states);
+    console.log(countries);
+    console.log(shapes);
 }
 
 

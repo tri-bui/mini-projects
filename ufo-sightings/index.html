@@ -116,7 +116,7 @@
                         <label for="datetime">Date</label>
                         <input
                             class="form-control" id="datetime" 
-                            type="text" placeholder="1/10/2010" 
+                            type="text" placeholder="1/1/2010 - 1/13/2010" 
                             maxlength="10"
                         />
                     </div>
@@ -156,11 +156,21 @@
                         />
                     </div>
 
-                    <!-- Filter button -->
-                    <button class="btn btn-dark btn-block border" 
-                            id="filter-btn" type="button">
-                        Filter
-                    </button>
+                    <!-- Buttons -->
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-dark btn-block border" 
+                                    id="reset-btn" type="reset">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-dark btn-block border" 
+                                    id="filter-btn" type="button">
+                                Filter
+                            </button>
+                        </div>
+                    </div>
                 </form>
                 
             </div>
