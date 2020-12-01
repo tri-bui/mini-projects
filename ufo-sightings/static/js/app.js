@@ -48,21 +48,32 @@ function displayTable(data) {
 /**
  * This function filters the data based on user input.
  * @param {arr[obj]} data - data to filter
- * @param {str} filter - name of column to filter
  * @return {arrr[obj]} filtered data
  */
-function filterData(data, filter) {
-    let filteredData = data;
+function filterData(data) {
+    let filtered = data;
 
-    // Extract user input
-    let filterVal = d3.select("#" + filter).property("value").toLowerCase();
+    // Input types on the page
+    let inputTypes = ["input", "select"];
 
-    // Filter the data based on input
-    if (filterVal) {
-        filteredData = filteredData.filter(row => row[filter] === filterVal);
-    }
+    // For each input type
+    inputTypes.forEach(inputType => {
 
-    return filteredData;
+        // For each input of the current type
+        d3.selectAll(inputType).nodes().forEach(input => {
+
+            // Input ID and value
+            let inputId = d3.select(input).property("id");
+            let inputVal = d3.select(input).property("value").toLowerCase();
+
+            // Filter data if there was an input
+            if (inputVal) {
+                filtered = filtered.filter(row => row[inputId] === inputVal);
+            };
+        });
+    });
+
+    return filtered;
 }
 
 
@@ -76,11 +87,7 @@ function filterButtonHandler() {
     let filteredData = tableData;
 
     // Filter data
-    filteredData = filterData(filteredData, "datetime");
-    filteredData = filterData(filteredData, "city");
-    filteredData = filterData(filteredData, "state");
-    filteredData = filterData(filteredData, "country");
-    filteredData = filterData(filteredData, "shape");
+    filteredData = filterData(filteredData);
 
     // Display the filtered data on the page
     displayTable(filteredData);
