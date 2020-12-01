@@ -63,8 +63,8 @@ function filterData(data) {
         d3.selectAll(inputType).nodes().forEach(input => {
 
             // Input ID and value
-            let inputId = d3.select(input).property("id");
-            let inputVal = d3.select(input).property("value").toLowerCase();
+            let inputId = input.id;
+            let inputVal = input.value.toLowerCase();
 
             // Filter data if there was an input
             if (inputVal) {
