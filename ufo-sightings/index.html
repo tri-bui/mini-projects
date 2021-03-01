@@ -17,19 +17,17 @@
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+
     <!-- Content wrapper -->
     <div class="wrapper bg-dark text-light">
 
         <!-- Navigation bar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <h2>
-                <a class="navbar-brand ml-4" href="index.html">UFO Sightings</a>
-            </h2>
+            <h2><a class="navbar-brand ml-4" href="index.html">UFO Sightings</a></h2>
 
             <!-- Collapsed menu -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#menu" aria-controls="menu" 
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" 
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -47,12 +45,10 @@
             </div>
         </nav>
 
-
         <!-- Jumbotron -->
         <div class="jumbotron text-center rounded-0">
             <h1 class="display-3">The Truth is Out There</h1>
         </div>
-
 
         <!-- Article -->
         <div class="container-fluid border-bottom pb-2 mb-5">
@@ -62,8 +58,7 @@
                 <div class="col-md-4">
                     <hr class="bg-light" />
                     <h3 class="my-4">
-                        UFO Sightings: Fact or Fancy?<br/>
-                        <small>Ufologists Weigh In</small>
+                        UFO Sightings: Fact or Fancy?<br/><small>Ufologists Weigh In</small>
                     </h3>
                     <hr class="bg-light" />
                 </div>
@@ -104,7 +99,6 @@
             </div>
         </div>
 
-
         <!-- Data -->
         <div class="container-fluid">
             <div class="row">
@@ -117,35 +111,25 @@
                         <!-- Shape input -->
                         <div class="form-group">
                             <label for="shape">Shape</label>
-                            <input
-                                class="form-control" id="shape" type="text"
-                            />
+                            <input class="form-control" id="shape" type="text" />
                         </div>
 
                         <!-- Date input -->
                         <div class="form-group">
-                            <label for="datetime">Date</label>
-                            <input
-                                class="form-control" id="datetime" 
-                                type="text" placeholder="1/1/2010 - 1/13/2010" 
-                                maxlength="10"
-                            />
+                            <label for="date">Date</label>
+                            <input class="form-control" id="date" type="text" 
+                                   placeholder="1/1/2010 - 1/13/2010" maxlength="10" />
                         </div>
                         
                         <!-- Location input -->
                         <div class="row">
                             <div class="form-group col-6 col-lg-12">
                                 <label for="city">City</label>
-                                <input
-                                    class="form-control" id="city" type="text"
-                                />
+                                <input class="form-control" id="city" type="text" />
                             </div>
                             <div class="form-group col-3 col-lg-6">
                                 <label for="state">State</label>
-                                <input
-                                    class="form-control" id="state" 
-                                    type="text"
-                                />
+                                <input class="form-control" id="state" type="text" />
                             </div>
                             <div class="form-group col-3 col-lg-6">
                                 <label for="country">Country</label>
@@ -161,25 +145,19 @@
                         <div class="row">
                             <div class="col-6">
                                 <button class="btn btn-dark btn-block border" 
-                                        id="reset-btn" type="reset">
-                                    Clear
-                                </button>
+                                        id="reset-btn" type="reset">Clear</button>
                             </div>
                             <div class="col-6">
                                 <button class="btn btn-dark btn-block border" 
-                                        id="filter-btn" type="button">
-                                    Filter
-                                </button>
+                                        id="filter-btn" type="button">Filter</button>
                             </div>
                         </div>
                     </form>
-                    
                 </div>
 
                 <!-- Data table -->
                 <div class="col-lg-9">
-                    <table class="table table-responsive table-bordered 
-                                table-dark table-striped table-hover">
+                    <table class="table table-responsive table-dark table-striped table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
