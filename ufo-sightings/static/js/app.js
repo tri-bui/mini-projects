@@ -14,11 +14,11 @@ function displayTable(data) {
     tbody.html(""); // clear the table
 
     // Iterate through every object in the data
-    data.forEach(dataObj => {
+    data.forEach(obs => {
         let row = tbody.append("tr"); // add a row to the table
 
         // Fill row with data
-        Object.entries(dataObj).forEach(([key, val]) => {
+        Object.entries(obs).forEach(([key, val]) => {
 
             // Title-case cities
             if (key == 'city') {
@@ -38,30 +38,22 @@ function displayTable(data) {
 
 
 /**
- * This function filters the data based on user input.
+ * Filter the data based on user input.
  * @param {arr[obj]} data - data to filter
- * @return {arrr[obj]} filtered data
+ * @return {arr[obj]} filtered data
  */
 function filterData(data) {
     let filtered = data;
-
-    // Input types on the page
-    let inputTypes = ["input", "select"];
+    let inputTypes = ["input", "select"]; // 4 `input` elements and 1 `select` element
 
     // For each input type
-    inputTypes.forEach(inputType => {
+    inputTypes.forEach(type => { // for each input type
+        d3.selectAll(type).nodes().forEach(input => { // for each input of the given type
+            let inputId = input.id; // input ID
+            let inputVal = input.value.toLowerCase(); // input val
 
-        // For each input of the current type
-        d3.selectAll(inputType).nodes().forEach(input => {
-
-            // Input ID and value
-            let inputId = input.id;
-            let inputVal = input.value.toLowerCase();
-
-            // Filter data if there was an input
-            if (inputVal) {
-                filtered = filtered.filter(row => row[inputId] === inputVal);
-            };
+            // Filter data if there was an input value
+            if (inputVal) {filtered = filtered.filter(row => row[inputId] === inputVal);};
         });
     });
 
