@@ -13,9 +13,9 @@ var tbody = d3.select("tbody");
 function displayTable(data) {
     tbody.html(""); // clear the table
 
-    // Iterate through every object in the data
+    // Add data to table
     data.forEach(obs => {
-        let row = tbody.append("tr"); // add a row to the table
+        let row = tbody.append("tr"); // add empty row to the table
 
         // Fill row with data
         Object.entries(obs).forEach(([key, val]) => {
@@ -46,11 +46,11 @@ function filterData(data) {
     let filtered = data;
     let inputTypes = ["input", "select"]; // 4 `input` elements and 1 `select` element
 
-    // For each input type
+    // Filter for matching rows
     inputTypes.forEach(type => { // for each input type
         d3.selectAll(type).nodes().forEach(input => { // for each input of the given type
-            let inputId = input.id; // input ID
-            let inputVal = input.value.toLowerCase(); // input val
+            let inputId = input.id; // input field ID
+            let inputVal = input.value.toLowerCase(); // input field val
 
             // Filter data if there was an input value
             if (inputVal) {filtered = filtered.filter(row => row[inputId] === inputVal);};
