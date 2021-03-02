@@ -62,19 +62,12 @@ function filterData(data) {
 
 
 /**
- * This function defines what happens when the filter button is clicked. The 
- * data is filtered based on the selected date and this filtered data is then 
- * displayed in the table on the page.
+ * Event handler for when the filter button is clicked. The data is filtered 
+ * based on the user input and is displayed in the table on the page.
  */
 function filterButtonHandler() {
-    // Initialize the filtered data to full data
-    let filteredData = tableData;
-
-    // Filter data
-    filteredData = filterData(filteredData);
-
-    // Display the filtered data on the page
-    displayTable(filteredData);
+    filteredData = filterData(tableData); // filter data
+    displayTable(filteredData); // display filtered data
 }
 
 
