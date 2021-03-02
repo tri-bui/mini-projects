@@ -6,41 +6,33 @@ var tbody = d3.select("tbody");
 
 
 /**
- * This function clears the table currently being displayed on the page, and 
- * displays the data that is passed in.
+ * Clear the table currently being displayed on the page and display the data 
+ * that is passed in.
  * @param {arr[obj]} data - data to display in the table
  */
 function displayTable(data) {
-
-    // Clear the table currently being displayed
-    tbody.html("");
+    tbody.html(""); // clear the table
 
     // Iterate through every object in the data
     data.forEach(dataObj => {
+        let row = tbody.append("tr"); // add a row to the table
 
-        // Add a row to the HTML table
-        let row = tbody.append("tr");
-
-        // Iterate through the current object's values
-        for (let key in dataObj) {
-            let val = dataObj[key];
+        // Fill row with data
+        Object.entries(dataObj).forEach(([key, val]) => {
 
             // Title-case cities
-            if (key == "city") {
-                val = val.split(" ").map(
-                    w => w[0].toUpperCase() + w.slice(1)
-                ).join(" ");
+            if (key == 'city') {
+                val = val.split(' ').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
             }
 
-            // Upper-case states and countries
-            if (["state", "country"].includes(key)) {
+            // Uppercase states and countries
+            if (['state', 'country'].includes(key)) {
                 val = val.toUpperCase();
             }
 
-            // Add a data cell to the HTML row with the current object value
-            let cell = row.append("td");
-            cell.text(val);
-        }
+            // Add value to cell
+            row.append("td").text(val)
+        });
     });
 }
 
