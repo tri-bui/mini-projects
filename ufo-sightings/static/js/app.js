@@ -71,8 +71,8 @@ function filterButtonHandler() {
 }
 
 
-// When the filter button is clicked, call its handler
+// Event listener for when the filter button is clicked
 d3.select("#filter-btn").on("click", filterButtonHandler);
 
-// Display full table on load
+// Display full table on visit
 displayTable(tableData);
